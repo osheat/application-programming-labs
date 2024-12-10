@@ -1,3 +1,4 @@
+import argparse
 import re
 
 class ProfileCounter:
@@ -27,11 +28,15 @@ class ProfileCounter:
 
 def main():
 
-    # Ввод имени файла
-    filename= input("Введите имя файла: ")
+    # Настраиваем парсер аргументов
+    parser = argparse.ArgumentParser(description="Подсчет анкет мужчин в указанном файле.")
+    parser.add_argument("filename", type=str, help="Путь к файлу, содержащему анкеты.")
+
+    # Парсим аргументы командной строки
+    args = parser.parse_args()
 
     # Создаем объект счетчика
-    counter = ProfileCounter(filename)
+    counter = ProfileCounter(args.filename)
 
     # Читаем файл
     data = counter.read_file()
