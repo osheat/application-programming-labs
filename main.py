@@ -4,11 +4,11 @@ import re
 class ProfileCounter:
     """Класс для подсчета анкет мужчин в файле"""
 
-    def __init__(self, filename):
+    def __init__(self, filename: str) -> None:
         """Конструктор класса"""
-        self.filename = filename
+        self.filename: str = filename
 
-    def read_file(self):
+    def read_file(self) -> str | None:
         """Читает содержимое файла"""
         try:
             with open(self.filename, 'r', encoding='utf-8') as file:
@@ -18,7 +18,7 @@ class ProfileCounter:
             return None
         
 
-    def count_men(self, data):
+    def count_men(self, data: str | None) -> int:
         """Считает количество анкет мужчин"""
         if data is None:
             return 0
