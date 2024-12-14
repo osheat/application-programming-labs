@@ -23,7 +23,7 @@ class ProfileCounter:
         if data is None:
             return 0
         # Ищем анкеты мужского пола
-        return len(re.findall(r'\bМужской\b', data))
+        return len(re.findall(r'^Пол:\s*Мужской$', data, re.MULTILINE))
 
 
 def main():
