@@ -1,7 +1,6 @@
 import os
 import csv
 
-
 class ImageIterator:
     """
     Итератор для обхода изображений.
