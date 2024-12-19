@@ -1,7 +1,6 @@
 import os
 import csv
 
-
 def create_annotation(save_dir: str, csv_file: str) -> None:
     """
     Создает CSV-файл с аннотацией (пути к изображениям).
